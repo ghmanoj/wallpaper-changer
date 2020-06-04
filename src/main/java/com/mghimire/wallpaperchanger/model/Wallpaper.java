@@ -3,35 +3,30 @@ package com.mghimire.wallpaperchanger.model;
 import java.io.File;
 import java.util.Map;
 
-public class Wallpaper
-{
-    private final Map<String, String> urls;
+public class Wallpaper {
 
-    private File localFile;
+  private final Map<String, String> urls;
 
-    public Wallpaper(Map<String, String> urls)
-    {
-        this.urls = urls;
-    }
+  private File localFile;
 
-    public String getUrlLocation(String location)
-    {
-        return urls.get(location);
-    }
+  public Wallpaper(Map<String, String> urls) {
+    this.urls = urls;
+  }
 
-    public File getLocalFile()
-    {
-        return localFile;
-    }
+  public String getUrlLocation(String location) {
+    return urls.get(location);
+  }
 
-    public void setLocalFile(File localFile)
-    {
-        this.localFile = localFile;
-    }
+  public File getLocalFile() {
+    return localFile;
+  }
 
-    @Override
-    public String toString()
-    {
-        return "Wallpaper{" + "urls=" + urls + '}';
-    }
+  public void setLocalFile(File localFile) {
+    this.localFile = localFile;
+  }
+
+  @Override
+  public String toString() {
+    return "Wallpaper{" + "urls=" + urls + '}';
+  }
 }

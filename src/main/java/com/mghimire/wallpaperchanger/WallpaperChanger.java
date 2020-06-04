@@ -10,55 +10,50 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class WallpaperChanger extends Application
-{
-    private static final double WINDOW_HEIGHT = 371.0;
-    private static final double WINDOW_WIDTH = 302.0;
+public class WallpaperChanger extends Application {
 
-    private static final String APP_ICON = "/icons/wallpaper.png";
-    private static final String APP_TITLE = "Wallpaper Changer";
-    private static final String DEFAULT_STYLE = "/css/light-theme.css";
+  private static final double WINDOW_HEIGHT = 371.0;
+  private static final double WINDOW_WIDTH = 302.0;
 
-    private BackgroundWallpaperChangerTask backgroundTask;
+  private static final String APP_ICON = "/icons/wallpaper.png";
+  private static final String APP_TITLE = "Wallpaper Changer";
+  private static final String DEFAULT_STYLE = "/css/light-theme.css";
 
-    @Override
-    public void start(Stage primaryStage) throws Exception
-    {
-        // check api key in environment variable
-        ApiUtil.getApiKey();
+  private BackgroundWallpaperChangerTask backgroundTask;
 
-        backgroundTask = new BackgroundWallpaperChangerTask();
+  public static void main(String[] args) {
+    launch(args);
+  }
 
-        WallpaperChangerController controller = new WallpaperChangerController(primaryStage, backgroundTask);
-        Pane node = new FxUiUtil(controller).getMainUi();
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    // check api key in environment variable
+    ApiUtil.getApiKey();
 
-        Scene scene = new Scene(node, WINDOW_WIDTH, WINDOW_HEIGHT);
+    backgroundTask = new BackgroundWallpaperChangerTask();
 
-        scene.getStylesheets().add(DEFAULT_STYLE);
+    WallpaperChangerController controller = new WallpaperChangerController(primaryStage,
+        backgroundTask);
+    Pane node = new FxUiUtil(controller).getMainUi();
 
-        setAppIcon(primaryStage);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle(APP_TITLE);
-        primaryStage.setResizable(false);
-        primaryStage.show();
-    }
+    Scene scene = new Scene(node, WINDOW_WIDTH, WINDOW_HEIGHT);
 
-    @Override
-    public void stop() throws Exception
-    {
-        backgroundTask.terminateTask();
-        super.stop();
-    }
+    scene.getStylesheets().add(DEFAULT_STYLE);
 
+    setAppIcon(primaryStage);
+    primaryStage.setScene(scene);
+    primaryStage.setTitle(APP_TITLE);
+    primaryStage.setResizable(false);
+    primaryStage.show();
+  }
 
+  @Override
+  public void stop() throws Exception {
+    backgroundTask.terminateTask();
+    super.stop();
+  }
 
-    private void setAppIcon(Stage primaryStage)
-    {
-        primaryStage.getIcons().add(new Image(APP_ICON));
-    }
-
-    public static void main(String[] args)
-    {
-        launch(args);
-    }
+  private void setAppIcon(Stage primaryStage) {
+    primaryStage.getIcons().add(new Image(APP_ICON));
+  }
 }
