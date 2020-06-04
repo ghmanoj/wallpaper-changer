@@ -1,0 +1,30 @@
+.root {
+    -fx-background: #212121;
+    -fx-text-fill: #ffffff;
+}
+
+.button {
+    -fx-background-color: #283593;
+    -fx-text-fill: #ffffff;
+}
+
+.button:hover {
+   -fx-background-color: #3949AB;
+}
+
+.button:pressed {
+    -fx-background-color: #283593;
+}
+
+.text-field {
+    -fx-background-color: #424242;
+    -fx-text-fill: #ffffff;
+}
+
+.slider .thumb {
+    -fx-background-color: #757575;
+}
+
+.slider .track {
+    -fx-background-color: #E0E0E0;
+}
