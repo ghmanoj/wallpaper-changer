@@ -15,9 +15,11 @@ To-do
 ### Demo
 
 Application on Dark Theme
-![Dark Theme](demo/dark.png)
+\
+![Dark Theme|300x200, 20%](demo/dark.png)
 \
 \
 \
 Light Theme
-![Light Theme](demo/light.png)
+\
+![Light Theme|300x200, 20%](demo/light.png)
