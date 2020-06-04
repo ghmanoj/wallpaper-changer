@@ -6,6 +6,9 @@ It uses upsplash for the random pictures.
 
 Currently, this app works only on MS Windows.
 
+### Usage
+set the environment variable UNSPLASH_API_KEY to use this application
+
 To-do
 -----
 1. Add support for Linux
