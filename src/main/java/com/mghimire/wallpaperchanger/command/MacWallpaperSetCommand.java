@@ -2,11 +2,10 @@ package com.mghimire.wallpaperchanger.command;
 
 import com.mghimire.wallpaperchanger.model.Wallpaper;
 
-public final class LinuxWallpaperSetCommand implements Command {
-
+public final class MacWallpaperSetCommand implements Command {
   private final Downloader downloader;
 
-  public LinuxWallpaperSetCommand(Downloader downloader) {
+  public MacWallpaperSetCommand(Downloader downloader) {
     this.downloader = downloader;
   }
 
@@ -22,6 +21,6 @@ public final class LinuxWallpaperSetCommand implements Command {
   }
 
   private void setWallpaper(Wallpaper wallpaper) {
-    System.out.println("Wallpaper setting feature not implemented yet for Linux....");
+    System.out.println("Wallpaper setting feature not implemented yet for macOS....");
   }
 }

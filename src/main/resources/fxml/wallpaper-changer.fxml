@@ -90,7 +90,7 @@
                            preserveRatio="true" GridPane.columnIndex="1" GridPane.columnSpan="2"
                            GridPane.rowIndex="1" GridPane.rowSpan="2"/>
                 <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity"
-                      minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="230.0"
+                      minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="228.0"
                       spacing="10.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="7">
                     <children>
                         <Button fx:id="hideWindowButton" mnemonicParsing="false" prefHeight="34.0"

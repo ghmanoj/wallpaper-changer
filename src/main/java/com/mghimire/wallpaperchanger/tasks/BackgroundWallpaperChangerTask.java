@@ -3,7 +3,7 @@ package com.mghimire.wallpaperchanger.tasks;
 import com.mghimire.wallpaperchanger.command.Command;
 import com.mghimire.wallpaperchanger.command.Downloader;
 import com.mghimire.wallpaperchanger.command.UnsplashWallpaperDownloader;
-import com.mghimire.wallpaperchanger.command.WinWallpaperSetCommand;
+import com.mghimire.wallpaperchanger.command.CommandAdapter;
 import com.mghimire.wallpaperchanger.model.Wallpaper;
 import com.mghimire.wallpaperchanger.util.ApiUtil;
 import java.util.concurrent.Executors;
@@ -56,7 +56,7 @@ public class BackgroundWallpaperChangerTask implements BackgroundTask {
   private void doWallpaperFetchAndSet() {
     String apiKey = ApiUtil.getApiKey();
     Downloader downloader = new UnsplashWallpaperDownloader(apiKey);
-    Command wallpaperCommand = new WinWallpaperSetCommand(downloader);
+    Command wallpaperCommand = CommandAdapter.getWallpaperCommandBasedOnOs(downloader);
     wallpaperCommand.execute();
     Wallpaper wallpaper = downloader.getDownload();
     callbackReference.onTaskComplete(wallpaper);
