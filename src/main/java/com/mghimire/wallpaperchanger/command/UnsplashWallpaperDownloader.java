@@ -26,6 +26,9 @@ public final class UnsplashWallpaperDownloader implements Downloader {
   private Wallpaper wallpaper;
 
   public UnsplashWallpaperDownloader(String apiKey) {
+    if (apiKey == null || apiKey.isEmpty())
+      throw new IllegalArgumentException("API KEY cannot be empty or null");
+
     this.apiKey = apiKey;
   }
 

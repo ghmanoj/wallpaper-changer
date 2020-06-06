@@ -32,8 +32,9 @@ public class WallpaperChanger extends Application {
 
     backgroundTask = new BackgroundWallpaperChangerTask();
 
-    WallpaperChangerController controller = new WallpaperChangerController(primaryStage,
-        backgroundTask);
+    WallpaperChangerController controller =
+        new WallpaperChangerController(primaryStage, backgroundTask);
+
     Pane node = new FxUiUtil(controller).getMainUi();
 
     Scene scene = new Scene(node, WINDOW_WIDTH, WINDOW_HEIGHT);
